@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Table | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --navy: #000c1a;
+            --gold: #c5a059;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--navy);
+            color: var(--white);
+            font-family: 'Poppins', sans-serif;
+        }
+
+      
+
+        .nav-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-btn {
+            border: 1px solid var(--gold);
+            padding: 8px 20px;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: 0.4s;
+        }
+
+        .nav-btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+        /* --- Updated Navigation Bar (More transparent for background) --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 8%; /* Reduced padding slightly */
+            background: rgba(0, 12, 26, 0.6); /* Reduced alpha from 0.95 for more transparency */
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            z-index: 1000;
+            transition: 0.4s;
+        }
+
+        /* --- Full Screen Hero Section with Full Background Image --- */
+        header {
+            height: 100vh; /* Full viewport height */
+            /* The image is applied as the main background of the header */
+            background-image: linear-gradient(rgba(0, 12, 26, 0.3), rgba(0, 12, 26, 0.9)), 
+                            url('https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop');
+            background-size: cover; /* Cover the entire area */
+            background-position: center; /* Center the image */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 120px; /* Space for the transparent fixed nav on top of it */
+            gap: 10px;    
+        }
+              
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            letter-spacing: 10px;
+            text-align: center;
+        }
+
+        /* Responsive Mobile Menu (Simple Version) */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Mobile par links hide ho jayenge */
+        }
+        .main-footer {
+    background-color: #000811; /* Darker than the body for depth */
+    color: #ffffff;
+    padding: 60px 10% 20px;
+    border-top: 1px solid rgba(197, 160, 89, 0.3);
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-logo {
+    font-family: 'Cinzel', serif;
+    color: #c5a059;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-family: 'Cinzel', serif;
+    color: #c5a059;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    line-height: 1.8;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #c5a059;
+    padding-left: 5px;
+}
+.socials a {
+    display: inline-flex; /* Flexbox se icon center rahega */
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(197, 160, 89, 0.1);
+    color: #c5a059; /* Gold color */
+    border: 1px solid #c5a059;
+    border-radius: 50%; /* Is se icons gol (circle) ho jayenge */
+    margin-right: 12px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.4s;
+}
+
+.socials a:hover {
+    background: #c5a059;
+    color: #000811; /* Gold background par Navy icon */
+    transform: translateY(-5px) scale(1.1); /* Thora sa bara aur upar hoga */
+    box-shadow: 0 5px 15px rgba(197, 160, 89, 0.4);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.8rem;
+    color: #555;
+    letter-spacing: 1px;
+}
+        
+        :root {
+            --navy: #000c1a;
+            --gold: #c5a059;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--navy);
+            color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            background-attachment: fixed;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(0, 12, 26, 0.95);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            z-index: 1000;
+        }
+
+        .nav-logo { font-family: 'Cinzel', serif; color: var(--gold); text-decoration: none; font-size: 1.5rem; letter-spacing: 2px; font-size: xx-large;}
+        .nav-links { list-style: none; display: flex; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--white); font-size: 0.9rem; text-transform: uppercase; }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* --- Menu Header --- */
+        .menu-header {
+            padding: 150px 20px 50px;
+            text-align: center;
+            font-size: x-large;
+        }
+
+        .menu-header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4.5rem;
+            color: var(--gold);
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            font-size: xx-large;
+        }
+
+        .divider {
+            width: 100px;
+            height: 2px;
+            background: var(--gold);
+            margin: 20px auto;
+        }
+
+        /* --- Menu Grid --- */
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .menu-card {
+            background: var(--glass);
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.5s;
+            backdrop-filter: blur(5px);
+        }
+
+        .menu-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.1);
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .menu-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            display: block;
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .order-btn {
+            margin-top: 20px;
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 10px 25px;
+            cursor: pointer;
+            font-family: 'Cinzel', serif;
+            transition: 0.4s;
+        }
+
+        .order-btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-logo">LUXE TABLE</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html" >About</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="login.php">Login</a></li>
+            <li><a href="order.php">Order</a></li>
+        </ul>
+    </nav>
+
+    <header class="menu-header">
+        <h1>The Royal Menu</h1>
+        <div class="divider"></div>
+        <p>Explore our selection of world-class gourmet dishes.</p>
+    </header>
+
+    <div class="menu-container">
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2080&auto=format&fit=crop" alt="Salad">
+            <h3>Gold Leaf Salad</h3>
+            <p>Fresh organic greens with saffron dressing and edible gold.</p>
+            <span class="price">$45.00</span>
+            <button class="order-btn"
+            onclick="addToCart('Gold Leaf Salad',45,'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2080')">
+            Order Now</button>
+        </div>
+
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop" alt="Steak">
+            <h3>Prime Ribeye</h3>
+            <p>Dry-aged steak served with truffle butter and roasted herbs.</p>
+            <span class="price">$95.00</span>
+            <button class="order-btn"
+            onclick="addToCart('Prime Ribeye',95,'https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974')">
+            Order Now</button>
+        </div>
+
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1964&auto=format&fit=crop" alt="Dessert">
+            <h3>Luxe Chocolate</h3>
+            <p>Dark Valrhona chocolate mousse with velvet texture.</p>
+            <span class="price">$35.00</span>
+           <button class="order-btn"
+           onclick="addToCart('Luxe Chocolate',35,'https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1964')">
+           Order Now</button>
+        </div>
+
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070&auto=format&fit=crop" alt="Drink">
+            <h3>Amber Sparkle</h3>
+            <p>Our signature mocktail with a hint of cinnamon and spice.</p>
+            <span class="price">$20.00</span>
+           <button class="order-btn"
+           onclick="addToCart('Amber Sparkle',20,'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070')">
+           Order Now</button>
+        </div>
+    </div>
+
+    <script>
+        function addToCart(dish) {
+            alert(dish + " has been added to your selection. Bon Appétit!");
+        }
+        <button class="order-btn" onclick="goToOrder()">Order Now</button>
+
+    function goToOrder() {
+        // Ye line user ko order page par bhej degi
+        window.location.href = "order.php";
+    }
+    </script>
+
+
+    <section style="padding: 100px 10% 60px; text-align: center; background-color: #000c1a;">
+        <h2 style="font-family: 'Cinzel', serif; color: #c5a059; font-size: 2.5rem; margin-bottom: 20px;">A Legacy of Taste</h2>
+        <p style="max-width: 800px; margin: 0 auto; line-height: 1.8; color: #f4f4f4; font-size: 1.1rem;">
+            Luxe Table sirf ek restaurant nahi, balki ek jazba hai. Hum har ingredient ko bohat soch samajh kar chunte hain taake aapki har shaam yaadgar ban sake.
+        </p>
+    </section>
+
+    <section style="padding: 60px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; background-color: #000c1a;">
+        
+        <div style="text-align: center; border: 1px solid rgba(197, 160, 89, 0.2); padding: 40px; transition: 0.4s;" onmouseover="this.style.borderColor='#c5a059'" onmouseout="this.style.borderColor='rgba(197, 160, 89, 0.2)'">
+            <div style="font-size: 3rem; color: #c5a059; margin-bottom: 15px;">🍷</div>
+            <h3 style="font-family: 'Cinzel', serif; color: #c5a059; margin-bottom: 10px;">Private Dining</h3>
+            <p style="color: #ccc; font-size: 0.9rem;">Elegant spaces for your intimate celebrations and business meetings.</p>
+        </div>
+
+        <div style="text-align: center; border: 1px solid rgba(197, 160, 89, 0.2); padding: 40px; transition: 0.4s;" onmouseover="this.style.borderColor='#c5a059'" onmouseout="this.style.borderColor='rgba(197, 160, 89, 0.2)'">
+            <div style="font-size: 3rem; color: #c5a059; margin-bottom: 15px;">👨‍🍳</div>
+            <h3 style="font-family: 'Cinzel', serif; color: #c5a059; margin-bottom: 10px;">Master Chefs</h3>
+            <p style="color: #ccc; font-size: 0.9rem;">Dishes prepared by award-winning chefs from around the globe.</p>
+        </div>
+
+        <div style="text-align: center; border: 1px solid rgba(197, 160, 89, 0.2); padding: 40px; transition: 0.4s;" onmouseover="this.style.borderColor='#c5a059'" onmouseout="this.style.borderColor='rgba(197, 160, 89, 0.2)'">
+            <div style="font-size: 3rem; color: #c5a059; margin-bottom: 15px;">🌿</div>
+            <h3 style="font-family: 'Cinzel', serif; color: #c5a059; margin-bottom: 10px;">Fresh Ingredients</h3>
+            <p style="color: #ccc; font-size: 0.9rem;">Farm-to-table experience with 100% organic and fresh produce.</p>
+        </div>
+
+    </section>
+
+    <section style="height: 400px; background: fixed center/cover url('https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop'); position: relative; display: flex; align-items: center; justify-content: center;">
+        <div style="background: rgba(0, 12, 26, 0.8); padding: 40px 60px; border: 1px solid #c5a059; backdrop-filter: blur(5px);">
+            <h2 style="font-family: 'Cinzel', serif; color: #c5a059; letter-spacing: 3px;">TASTE THE PERFECTION</h2>
+        </div>
+    </section>
+
+    <footer style="padding: 40px 10%; background-color: #00050a; text-align: center; border-top: 1px solid #c5a059;">
+        <p style="color: #c5a059; font-family: 'Cinzel', serif; letter-spacing: 2px;">LUXE TABLE</p>
+        <p style="color: #666; font-size: 0.8rem; margin-top: 10px;">&copy; 2026 Luxe Table. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Nav bar scroll effect
+        window.onscroll = function() {
+            let nav = document.getElementById("navbar");
+            if (window.scrollY > 100) {
+                nav.style.padding = "10px 8%";
+                nav.style.background = "rgba(0, 12, 26, 1)";
+            } else {
+                nav.style.padding = "20px 8%";
+                nav.style.background = "rgba(0, 12, 26, 0.95)";
+            }
+        };
+
+        function openBooking() {
+            alert("Reservation System Coming Soon!");
+        }
+
+
+function addToCart(name, price, image) {
+    localStorage.setItem('selectedProductName', name);
+    localStorage.setItem('selectedProductPrice', price);
+    localStorage.setItem('selectedProductImage', image);
+
+    alert(name + " added to your selection!");
+
+    window.location.href = "order.php";
+}
+    </script>
+    <footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h2 class="footer-logo">LUXE TABLE</h2>
+            <p>Experience the art of fine dining where every plate tells a story of gold and elegance.</p>
+            <div class="socials">
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    
+    <a href="https://wa.me/923001234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+        </div>
+
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html"> Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="order.php">Order Now</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section contact">
+            <h3>Find Us</h3>
+            <p>123 Luxury Avenue, Jhang, Pakistan</p>
+            <p>Email: info@luxetable.com</p>
+            <p>Phone: +92 300 1234567</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; 2026 Luxe Table | Designed by Zainab
+    </div>
+</footer>
+
+</body>
+</html>

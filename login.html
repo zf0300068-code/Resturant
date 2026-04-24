@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Luxe Table</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #000c1a;
+            --gold: #c5a059;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            /* Full Image Background with Overlay */
+            background: linear-gradient(rgba(0, 12, 26, 0.7), rgba(0, 12, 26, 0.7)), 
+                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        /* --- Glassmorphism Auth Card --- */
+        .auth-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px); /* Shishe jaisa blur */
+            padding: 50px 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            transition: 0.5s;
+        }
+
+        .auth-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 10px 40px rgba(197, 160, 89, 0.2);
+        }
+
+        .auth-card h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+
+        .auth-card p.subtitle {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        /* --- Input Fields --- */
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            color: var(--gold);
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            color: white;
+            border-radius: 5px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 15px rgba(197, 160, 89, 0.2);
+        }
+
+        /* --- Buttons --- */
+        .btn-auth {
+            width: 100%;
+            padding: 15px;
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.4s;
+            letter-spacing: 2px;
+        }
+
+        .btn-auth:hover {
+            background: #e0bb70;
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+        }
+
+        .switch-auth {
+            font-size: 0.85rem;
+            margin-top: 20px;
+            color: #ccc;
+        }
+
+        .switch-auth a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .switch-auth a:hover { text-decoration: underline; }
+
+        .back-home {
+            margin-top: 30px;
+            font-size: 0.8rem;
+        }
+
+        .back-home a { color: #888; text-decoration: none; }
+        .back-home a:hover { color: var(--white); }
+
+    </style>
+</head>
+<body>
+    <!-- Form tag ko is tarah update karein -->
+        <div class="auth-card">
+        <h2>Welcome Back</h2>
+        <p class="subtitle">Enter the realm of exquisite taste.</p>
+          <form action="save_login.php" method="POST"></form>
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="e.g., royal@luxetable.com" required>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="pass" placeholder="••••••••" required>
+            </div>
+            
+            <button type="submit" class="btn-auth">Log In</button>
+        </form>
+        
+        <p class="switch-auth">Don't have an account? 
+             <a href="sign.html">Sign up</a></p>
+        
+        <p class="back-home"><a href="home.html">&larr; Back to Home Page</a></p>
+    </div>
+
+    <script>
+        function handleLogin(e) {
+            e.preventDefault();
+            // Yahan actual login logic aayegi
+            alert("Aapka swagat hai! Luxe Table par aapki shaam yaadgar banegi.");
+            window.location.href = "home.html"; // Redirect to home after login
+            return false;
+        }
+    </script>
+
+</body>
+</html>

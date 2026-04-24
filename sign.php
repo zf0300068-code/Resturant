@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us | Luxe Table</title>
+    <link href="background.webp" alt="background">
+    <style>
+        :root {
+            --navy: #000c1a;
+            --gold: #c5a059;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            /* Full Image Background with Overlay (different from login) */
+            background: linear-gradient(rgba(0, 12, 26, 0.7), rgba(0, 12, 26, 0.7)), 
+                        url(background.webp);
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        /* --- Glassmorphism Auth Card --- */
+        .auth-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            padding: 50px 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            width: 420px; /* Slightly wider for full name */
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            transition: 0.5s;
+        }
+
+        .auth-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 10px 40px rgba(197, 160, 89, 0.2);
+        }
+
+        .auth-card h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+
+        .auth-card p.subtitle {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        /* --- Input Fields --- */
+        .input-group {
+            margin-bottom: 15px; /* Thora kam margin for more fields */
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            color: var(--gold);
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            color: white;
+            border-radius: 5px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 15px rgba(197, 160, 89, 0.2);
+        }
+
+        /* --- Buttons --- */
+        .btn-auth {
+            width: 100%;
+            padding: 15px;
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.4s;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+
+        .btn-auth:hover {
+            background: #e0bb70;
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+        }
+
+        .switch-auth {
+            font-size: 0.85rem;
+            margin-top: 20px;
+            color: #ccc;
+        }
+
+        .switch-auth a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .switch-auth a:hover { text-decoration: underline; }
+
+        .back-home {
+            margin-top: 30px;
+            font-size: 0.8rem;
+        }
+
+        .back-home a { color: #888; text-decoration: none; }
+        .back-home a:hover { color: var(--white); }
+
+    </style>
+</head>
+<body>
+<div class="auth-card">
+    <h2>Create Account</h2>
+    <p class="subtitle">Join the elite club of Luxe Table guests.</p>
+    
+    <!-- 1. Form Action update kiya -->
+    <form action="save_sign.php" method="POST">
+        <div class="input-group">
+            <label>Full Name</label>
+            <!-- 2. 'name' attribute add kiya -->
+            <input type="text" name="full_name" placeholder="e.g., Royal Khan" required>
+        </div>
+        <div class="input-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="e.g., royal@luxetable.com" required>
+        </div>
+        <div class="input-group">
+            <label>Create Password</label>
+            <input type="password" name="password" placeholder="Minimum 8 characters" required>
+        </div>
+        
+        <button type="submit" class="btn-auth">Register Now</button>
+    </form>
+    
+    <p class="switch-auth">Already a member? <a href="login.html">Login</a> </p>
+    <p class="back-home"><a href="index.html">&larr; Back to Home Page</a></p>
+</div>
+
+
+    <script>
+        function handleSignup(e) {
+            e.preventDefault();
+            // Yahan signup logic aayegi
+            alert("Account ban gaya! Welcome to the Luxe Table family.");
+            window.location.href = "login.php"; // Redirect to login after signup
+            return false;
+        }
+    </script>
+
+</body>
+</html>

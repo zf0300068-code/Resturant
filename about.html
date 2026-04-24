@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About| Luxe Table</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --navy: #000c1a;
+            --gold: #c5a059;
+            --soft-gold: rgba(197, 160, 89, 0.1);
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--navy);
+            color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+        }
+        
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(0, 12, 26, 0.95);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            z-index: 1000;
+        }
+
+        .nav-logo { font-family: 'Cinzel', serif; color: var(--gold); text-decoration: none; font-size: 1.5rem; letter-spacing: 2px; }
+        .nav-links { list-style: none; display: flex; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--white); font-size: 0.9rem; text-transform: uppercase; }
+        .nav-links a:hover { color: var(--gold); }
+
+
+        /* --- Navigation --- */
+
+        /* --- About Section --- */
+        .about-header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(rgba(0,12,26,0.8), rgba(0,12,26,0.8)), 
+                        url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .about-header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: var(--gold);
+            letter-spacing: 5px;
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 60px auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+            padding: 0 20px;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 30%;
+            border-radius: 5px;
+            border: 1px solid var(--gold);
+            padding: 10px;
+            transition: 0.5s;
+        }
+
+        .about-image img:hover {
+            box-shadow: 0 0 30px var(--gold);
+        }
+
+        /* --- Stats/Values Section --- */
+        .values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            background: var(--soft-gold);
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .value-item h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 2rem;
+        }* 
+        .stats-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px; /* Items ke darmiyan fasla */
+    padding: 40px 0;
+    background: transparent;
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    margin: 50px auto;
+    width: 80%;
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.counter {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    color: #c5a059;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.stat-box p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+/* Mobile ke liye responsive layout */
+@media (max-width: 768px) {
+    .stats-strip {
+        flex-direction: column;
+        gap: 40px;
+        width: 100%;
+    }
+}
+
+        /* --- Footer CTA Section Styling --- */
+.footer-cta {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(0, 12, 26, 0.5); /* Halka sa navy background */
+}
+
+.footer-cta a {
+    text-decoration: none; /* Link ki line khatam karne ke liye */
+}
+
+.footer-cta button {
+    background: transparent;
+    color: #c5a059; /* Gold Color */
+    font-family: 'Cinzel', serif; /* Elegant Font */
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding: 15px 40px;
+    border: 2px solid #c5a059;
+    border-radius: 0; /* Sharp corners zyada luxury lagte hain */
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.1);
+}
+
+/* --- Hover Effect --- */
+.footer-cta button:hover {
+    background: #c5a059;
+    color: #000c1a; /* Navy background par gold text */
+    box-shadow: 0 0 25px rgba(197, 160, 89, 0.5); /* Gold Glow */
+    transform: translateY(-5px); /* Thora sa upar uthega */
+}
+
+/* --- Choti si correction aapke HTML ke liye --- */
+
+        /* --- Footer Button --- */
+        .footer-cta {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .btn-reserve {
+            padding: 15px 40px;
+            border: 1px solid var(--gold);
+            background: var(--gold);
+            color: var(--navy);
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.4s;
+        }
+
+        .btn-reserve:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            .about-header h1 { font-size: 2.5rem; }
+        }
+        .main-footer {
+    background-color: #000811; /* Darker than the body for depth */
+    color: #ffffff;
+    padding: 60px 10% 20px;
+    border-top: 1px solid rgba(197, 160, 89, 0.3);
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-logo {
+    font-family: 'Cinzel', serif;
+    color: #c5a059;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-family: 'Cinzel', serif;
+    color: #c5a059;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    line-height: 1.8;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #c5a059;
+    padding-left: 5px;
+}
+
+.socials a {
+    display: inline-flex; /* Flexbox se icon center rahega */
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(197, 160, 89, 0.1);
+    color: #c5a059; /* Gold color */
+    border: 1px solid #c5a059;
+    border-radius: 50%; /* Is se icons gol (circle) ho jayenge */
+    margin-right: 12px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.4s;
+}
+
+.socials a:hover {
+    background: #c5a059;
+    color: #000811; /* Gold background par Navy icon */
+    transform: translateY(-5px) scale(1.1); /* Thora sa bara aur upar hoga */
+    box-shadow: 0 5px 15px rgba(197, 160, 89, 0.4);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.8rem;
+    color: #555;
+    letter-spacing: 1px;
+}
+    </style>
+</head>
+<body>
+  <nav>
+        <a href="index.html" class="nav-logo">LUXE TABLE</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="order.php">Order</a></li>
+        </ul>
+    </nav>
+
+    <header class="about-header">
+        <h1>About us</h1>
+        <p>A journey of taste, elegance, and tradition.</p>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="about-image">
+            <img src="cheif.jpeg" alt="cheif">
+        <div class="about-text">
+            <h2>Crafting Excellence</h2>
+            <p>
+                Luxe Table ki buniyaad aik sadgi bhare khawab par rakhi gayi thi: "Khana sirf pait bharne ke liye nahi, balke aik tajarba (experience) hona chahiye." Humne duniya bhar se behtareen masale aur ingredients jama kiye hain taake aapko har niwale mein aik naya ehsas mile.
+            </p>
+            <p style="margin-top: 15px;">
+                Humara kitchen sirf khana nahi banata, balke har dish ko aik artwork ki tarah sajata hai. Midnight Navy aur Gold ka ye mahool aapko kisi shahi darbar ka ehsas dilayega.
+            </p>
+        </div>
+    </div>
+    <div class="stats-strip">
+    <div class="stat-box">
+        <h2 class="counter" data-target="500">0</h2>
+        <p>Years of Legacy</p>
+    </div>
+    <div class="stat-box">
+        <h2 class="counter" data-target="500">0</h2>
+        <p>Signature Dishes</p>
+    </div>
+    <div class="stat-box">
+        <h2 class="counter" data-target="200">0</h2>
+        <p>Master Chefs</p>
+    </div>
+</div>
+
+    <div class="footer-cta">
+        <a href="menu.html" onclick="menu.html">
+            <button type="button">Explore our menu</button>
+
+</a>
+    </div>
+
+    <script>
+      // Window load animation
+        window.onload = function() {
+            console.log("Welcome to Luxe Table - About Us Page");
+            // Hum yahan mazeed animations add kar sakte hain
+        };
+
+
+
+const counters = document.querySelectorAll('.counter');
+const speed = 200; // Animation ki raftar (jitna kam hoga utna tez chalega)
+
+const startCount = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const counter = entry.target;
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 20); // 20ms baad dubara barhega
+                } else {
+                    counter.innerText = target + "+"; // Aakhir mein + sign lagane ke liye
+                }
+            };
+            updateCount();
+            observer.unobserve(counter); // Taake animation sirf ek baar chale
+        }
+    });
+};
+
+// Intersection Observer taake jab scroll karke numbers samne aayein tabhi animation chale
+const options = { threshold: 1.0 };
+const observer = new IntersectionObserver(startCount, options);
+
+counters.forEach(counter => {
+    observer.observe(counter);
+});
+    </script>
+    <footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h2 class="footer-logo">LUXE TABLE</h2>
+            <p>Experience the art of fine dining where every plate tells a story of gold and elegance.</p>
+            <div class="socials">
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    
+    <a href="https://wa.me/923001234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+        </div>
+
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                 <li><a href="menu.html"> Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="order.php">Order Now</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section contact">
+            <h3>Find Us</h3>
+            <p>123 Luxury Avenue, Jhang, Pakistan</p>
+            <p>Email: info@luxetable.com</p>
+            <p>Phone: +92 300 1234567</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; 2026 Luxe Table | Designed by Zainab
+    </div>
+</footer>
+</body>
+</html>
